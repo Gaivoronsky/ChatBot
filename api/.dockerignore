@@ -1,0 +1,10 @@
+README.md
+docker-compose.yml
+.gitlab-ci.yml
+.gitignore
+notebooks
+__pycache__
+.pytest_cache
+session.session
+venv
+session.session-journal

@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  postgres:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "analyzedb"
+      POSTGRES_USER: "alex"
+      POSTGRES_PASSWORD: "hardpassword"
+    expose:
+      - 5432
+  api:
+    build: api
+    ports:
+        - 80:80
+    depends_on:
+      - postgres
+  bot:
+    build: bot
+    depends_on:
+      - api
+

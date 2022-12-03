@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "KEK_TG"
+version = "0.1.0"
+description = ""
+authors = ["kompotiks <lifami40@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "3.8.*"
+transformers = "^4.24.0"
+Telethon = "^1.25.4"
+torch = "1.12.1"
+pydantic = {extras = ["dotenv"], version = "^1.10.2"}
+streamlit = "^1.15.2"
+SQLAlchemy = "^1.4.44"
+psycopg2 = "^2.9.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
