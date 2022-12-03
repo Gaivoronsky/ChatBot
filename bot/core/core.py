@@ -8,7 +8,12 @@ from db.db import ClassDB
 
 
 class ManagementTG:
-    def __init__(self, interval_check: int = 1, model_name: str = "inkoziev/rugpt_chitchat", is_docker: bool = True):
+    def __init__(self,
+                 interval_check: int = 1,
+                 model_name: str = settings.name_model,
+                 is_docker: bool = settings.is_docker,
+                 max_len_history: int = settings.max_len_history,
+                 start_len_history: int = settings.start_len_history):
         self.client = TelegramClient('session', settings.api_id, settings.api_hash)
         self.client.connect()
         self.interval_check = interval_check
@@ -37,8 +42,8 @@ class ManagementTG:
         self.model.eval()
 
         self.history_messages = set(self.get_message())
-        self.max_len_history = 10
-        self.start_len_history = 3
+        self.max_len_history = max_len_history
+        self.start_len_history = start_len_history
 
     def send_message(self, text: str = 'Гы', chat_id: int = settings.chat_id):
         self.client.send_message(chat_id, text, parse_mode='html')
