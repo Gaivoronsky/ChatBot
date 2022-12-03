@@ -1,4 +1,10 @@
-# Project structure
+## Description
+
+This bot works only in Russian.
+It is based on neural network transformer models.
+It now supports a conversation context of up to 10 messages.
+
+## Project structure
 
 ```
 ├── .git                  <- Git (read-only)
@@ -9,7 +15,7 @@
 ├── README.md             <- It's me
 ```
 
-# Install Docker
+## Install Docker
 
 - Install [Docker](https://docs.docker.com/desktop/install/windows-install/) and [WSL 2 backend](https://learn.microsoft.com/ru-ru/windows/wsl/install)
 - Create [API ID and API HASH](https://core.telegram.org/api/obtaining_api_id)
@@ -35,25 +41,26 @@ docker-compose up -d --build
 docker-compose down
 ```
 
-# Install local 
+## Install local 
 
-Installing dependencies:
+- Go to directory
+```bash
+cd bot
+```
+- Installing dependencies:
 ```bash
 poetry install
 poetry shell
 ```
-
-Start API:
+- Create .env file by path bot/.env
+```bash
+API_ID="API_ID"
+API_HASH="API_HASH"
+PHONE="PHONE"
+MY_ID=MY_ID
+CHAT_ID=CHAT_ID
+```  
+- Start API:
 ```bash
 python -m core
-```
-
-Build image:
-```bash
-docker build -t tg_bot .
-```
-
-Start image:
-```bash
-docker run -d tg_bot
 ```
