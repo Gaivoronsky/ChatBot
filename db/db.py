@@ -6,7 +6,7 @@ class ClassDB:
     def __init__(self, session: Session = Session()):
         self.session = session
 
-    def add_token(self, token):
+    def add_token(self, token: str):
         tokens_table = Tokens(
             token=token,
         )

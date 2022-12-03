@@ -45,10 +45,10 @@ class ManagementTG:
         self.max_len_history = max_len_history
         self.start_len_history = start_len_history
 
-    def send_message(self, text: str = 'Гы', chat_id: int = settings.chat_id):
+    def send_message(self, text: str, chat_id: int = settings.chat_id):
         self.client.send_message(chat_id, text, parse_mode='html')
 
-    def create_answer(self, chat_id: int = settings.chat_id, len_history: int = 1):
+    def create_answer(self, chat_id: int = settings.chat_id, len_history: int = 1) -> str:
         history_message = '<s>' + '\n'.join(
             [f'- {i}' for i in
              self.get_message(chat_id, count=min(len_history, self.max_len_history), all_message=True)][::-1]

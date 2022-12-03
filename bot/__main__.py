@@ -1,4 +1,4 @@
-from core.core import ManagementTG
+from bot.core import ManagementTG
 
 
 if __name__ == '__main__':

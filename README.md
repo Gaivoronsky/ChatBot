@@ -8,11 +8,16 @@ It now supports a conversation context of up to 10 messages.
 
 ```
 ├── .git                  <- Git (read-only)
+├── .gitignore            <- Git (ignore)
+├── LICENSE               <- License project
 ├── api                   <- API code
 ├── bot                   <- ChatBot code
+├── db                    <- DB code
 ├── docker-compose.yml    <- Make file project
 ├── pyproject.toml        <- File for poetry
 ├── README.md             <- It's me
+├── settings.py           <- Setting project
+├── .env                  <- Create your
 ```
 
 ## Install Docker
@@ -21,7 +26,7 @@ It now supports a conversation context of up to 10 messages.
 - Create [API ID and API HASH](https://core.telegram.org/api/obtaining_api_id)
 - Start Docker
 - Find id people for chat and your id. For it uses [tg bot](https://t.me/username_to_id_bot)
-- Create .env file by path bot/.env
+- Create .env file
 ```bash
 API_ID="API_ID"
 API_HASH="API_HASH"
@@ -43,16 +48,12 @@ docker-compose down
 
 ## Install local 
 
-- Go to directory
-```bash
-cd bot
-```
 - Installing dependencies:
 ```bash
 poetry install
 poetry shell
 ```
-- Create .env file by path bot/.env
+- Create .env file
 ```bash
 API_ID="API_ID"
 API_HASH="API_HASH"
@@ -62,5 +63,5 @@ CHAT_ID=CHAT_ID
 ```  
 - Start API:
 ```bash
-python -m core
+python -m bot
 ```
